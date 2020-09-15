@@ -36,6 +36,7 @@ public class ArbolBinarioControlador implements Serializable {
 
     private ArbolBinario arbol = new ArbolBinario();
     private int dato;
+    private int datoNivel;
     private boolean verInOrden = false;
     private boolean verPreOrden = false;
     private boolean verPostOrden = false;
@@ -157,6 +158,15 @@ public class ArbolBinarioControlador implements Serializable {
     public void setDato(int dato) {
         this.dato = dato;
     }
+    
+    public int getDatoNivel() {
+        return datoNivel;
+    }
+
+    public void setDatoNivel(int datoNivel) {
+        this.datoNivel = datoNivel;
+    }
+    
 
     public ArbolBinario getArbol() {
         return arbol;
@@ -288,6 +298,10 @@ public class ArbolBinarioControlador implements Serializable {
     public void CambiarNodos() {
             arbol.cambiar();
             pintarArbol();
+    }         
+    public void cambiarIngr() {
+            arbol.cambiarNodos(dato);
+            pintarArbol();
            
     }
     public void PodarArbol() {
@@ -295,6 +309,15 @@ public class ArbolBinarioControlador implements Serializable {
             arbol.podar();
             pintarArbol();
            
+    }
+    
+    public String borrarNivel() {
+    arbol.BorrarNivel(datoNivel);
+    pintarArbol();
+        if (datoNivel == 0) {
+            return ("No existe el dato en el arbol");
+        }
+        return ("Borrado el nivel: " + datoNivel);
     }
 
     public DefaultDiagramModel getModel() {

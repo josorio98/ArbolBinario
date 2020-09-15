@@ -32,6 +32,25 @@
         </p:panel>
         </h:form>
         
+        <h:form>
+            <p:panel header="Cambiar datos">
+                <p:outputLabel value="Dato:"/>
+                <p:inputText required="true" value="#{arbolBinarioControlador.datoNivel}"/>
+                <p:commandButton ajax="false"  value="B.Nivel" action="#{arbolBinarioControlador.borrarNivel()}"
+                                 update="@all" />
+        
+        </p:panel>
+        </h:form>
+        
+        <h:form>
+            <p:panel header="Cambiar datos">
+                <p:outputLabel value="Dato:"/>
+                <p:inputText required="true" value="#{arbolBinarioControlador.dato}"/>
+                <p:commandButton ajax="false"  value="Camb.Nodo" action="#{arbolBinarioControlador.cambiarIngr()}"
+                                 update="@all" />
+        
+        </p:panel>
+        </h:form>
         
                <h:form>
             <p:panel header="Operaciones">
@@ -44,6 +63,8 @@
                 <p:commandButton value="Rama Mayor" action="#{arbolBinarioControlador.habilitarRamaMayor()}" update="@all" ajax="false"/>
                 <p:commandButton value="Podar" action="#{arbolBinarioControlador.habilitarRamaMayor()}" update="@all" ajax="false"/>
                 <p:commandButton value="Hojas" action="#{arbolBinarioControlador.habilitarHoja()}" update="@all" ajax="false"/>
+                <p:commandButton ajax="false"  value="Cambiar" action="#{arbolBinarioControlador.CambiarNodos()}"
+                                 update="@all" />
               
             </p:panel>
         </h:form>
